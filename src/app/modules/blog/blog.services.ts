@@ -78,15 +78,14 @@ const deleteBlogFromDB = async (id: Types.ObjectId, user?: TokenPayload) => {
 	}
 };
 
-const getAllBlogsFromDB = async (query?: IBlogQuery) => {
+const fetchAllBlogs = async (query?: IBlogQuery) => {
 	const blogQuery = new QueryBuilder(Blog.find(), query)
 		.search(['title', 'content'])
-		.banguFilter('author', 'filter')
+		.blogsFilter('author', 'filter')
 		.filter()
 		.sort();
 
 	const blogs = await blogQuery.modelQuery.exec();
-
 	return blogs;
 };
 
@@ -94,5 +93,5 @@ export const blogServices = {
 	saveBlogInDB,
 	updateBlogInDB,
 	deleteBlogFromDB,
-	getAllBlogsFromDB,
+	fetchAllBlogs,
 };

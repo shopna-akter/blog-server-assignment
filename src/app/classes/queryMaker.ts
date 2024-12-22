@@ -1,15 +1,6 @@
 import { type Query, type FilterQuery, Model } from 'mongoose';
 
-/**
- * @class QueryBuilder
- * @description Utility class to build MongoDB queries.
- */
 export class QueryBuilder<T> {
-	/**
-	 * Creates an instance of `QueryBuilder`.
-	 * @param modelQuery Mongoose model on which the query will be performed.
-	 * @param query Query parameters for filtering, sorting and paginating.
-	 */
 	constructor(
 		public modelQuery: Query<T[], T> = Model.find(),
 		public query?: Record<string, unknown>,
@@ -18,11 +9,6 @@ export class QueryBuilder<T> {
 		this.query = query;
 	}
 
-	/**
-	 * Method to search for a keyword in the specified fields.
-	 * @param searchFields An array of field names to search in.
-	 * @returns The current instance of QueryBuilder.
-	 */
 	search(searchFields: string[]) {
 		const keyword = this?.query?.search as string;
 
@@ -40,10 +26,6 @@ export class QueryBuilder<T> {
 		return this;
 	}
 
-	/**
-	 * Method to filter the query based on the provided query parameters.
-	 * @returns The current instance of QueryBuilder.
-	 */
 	filter() {
 		const queryObj = { ...this.query };
 
@@ -65,10 +47,6 @@ export class QueryBuilder<T> {
 		return this;
 	}
 
-	/**
-	 * Sorts the query based on `sortBy` and `sortOrder` parameters.
-	 * @returns The current instance of QueryBuilder.
-	 */
 	sort() {
 		const sortField = (this.query?.sortBy as string) || 'createdAt';
 		const sortOrder = (this.query?.sortOrder as string) || 'desc';
@@ -80,14 +58,7 @@ export class QueryBuilder<T> {
 
 		return this;
 	}
-
-	/**
-	 * Adds a filter to the query based on a specific field and a corresponding value from the query parameters.
-	 * @param field The field to filter on.
-	 * @param valueKey The key in the query parameters to extract the filter value.
-	 * @returns The current instance of QueryBuilder.
-	 */
-	banguFilter(field: keyof T, valueKey: string) {
+	blogsFilter(field: keyof T, valueKey: string) {
 		const value = this.query?.[valueKey] as string;
 
 		if (value) {
@@ -99,10 +70,6 @@ export class QueryBuilder<T> {
 		return this;
 	}
 
-	/**
-	 * Method to paginate the query based on `page` and `limit` from the query object.
-	 * @returns The current instance of QueryBuilder.
-	 */
 	paginate() {
 		const page = Number(this?.query?.page) || 1;
 		const limit = Number(this?.query?.limit) || 10;
