@@ -1,6 +1,6 @@
 # Blogs Server
 
-- [Live Server Link]()
+- [Live Server Link](https://assignment-blogs-server.vercel.app)
 
 ## 🚀 **Key Features of My Blogs Server**
 
