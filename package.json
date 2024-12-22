@@ -6,7 +6,6 @@
 	"scripts": {
 		"build": "node build.mjs",
 		"dev": "nodemon",
-		"deploy": "node build.mjs && vercel --prod",
 		"start": "node dist/server.js",
 		"format": "prettier --write src/",
 		"lint": "node lint.mjs",
