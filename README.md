@@ -1,41 +1,8 @@
 # Bangu Blogs Server
 
-- [Live Server Link](https://bangu-blogs-server-nhb.vercel.app)
+- [Live Server Link]()
 
-<details>
-  <summary>
-      <h3 style="display:inline;">📑 Table of Contents</h3>
-  </summary>
-
-   1. **[Overview](#-overview)**  
-   2. **[Key Features of Bangu Blogs Server](#-key-features-of-bangu-blogs-server)**  
-   3. **[Technologies (Packages) Used](#️-technologies-packages-used)**  
-   4. **[Run the Server Locally](#️-run-the-server-locally)**  
-      - [Prerequisites](#prerequisites)  
-      - [Installation](#installation)  
-   5. **[Authentication](#-authentication)**  
-      - [User Registration](#user-registration)  
-      - [User Login](#user-login)  
-   6. **[Blog Management](#-blog-management)**  
-      - [Create Blog](#create-blog)  
-      - [Update Blog](#update-blog)  
-      - [Delete Blog](#delete-blog)  
-   7. **[Admin Actions](#️-admin-actions)**  
-      - [Block User](#block-user)  
-      - [Delete Blog (Admin)](#delete-blog-admin)  
-   8. **[Search, Sort & Filter Blogs](#-search-sort--filter-blogs)**  
-   9. **[Error Handling](#-error-handling)**  
-   10. **[Custom Progress Indicators](#-custom-progress-indicators)**
-   11. **[Project Overview Video](#-project-overview-video)**  
-   12. **[Admin Credentials](#-admin-credentials)**  
-
-</details>
-
-## 📚 Overview
-
-Bangu Blogs Server is a robust backend application built for managing blogs with user authentication, role-based access control, and comprehensive API functionalities. It supports both **Admin** and **User** roles with tailored permissions and features.
-
-## 🚀 **Key Features of Bangu Blogs Server**
+## 🚀 **Key Features of My Blogs Server**
 
 1. **User Authentication & Authorization:** Secure login with role-based access control (Admin, User).  
 2. **Role Management:** Admins can block users and manage all blogs, while users can manage their own content.  
@@ -49,37 +16,37 @@ Bangu Blogs Server is a robust backend application built for managing blogs with
 
 ## ⚙️ Technologies (Packages) Used
 
-### **🛠️ Core Technologies**
+### ** Core Technologies**
 
 - **TypeScript** – Typed JavaScript for better scalability and maintainability.  
 - **Node.js** – JavaScript runtime environment.  
 - **Express.js** – Fast, unopinionated web framework for Node.js.  
 - **Mongoose** – Elegant MongoDB object modeling for Node.js.
 
-### **🔒 Authentication & Security**
+### ** Authentication & Security**
 
 - **bcrypt** – Library for hashing passwords.  
 - **jsonwebtoken** – Implementation of JSON Web Tokens for authentication.  
 - **cookie-parser** – Middleware to parse cookies in requests.
 
-### **✅ Validation**
+### ** Validation**
 
 - **zod** – TypeScript-first schema validation library.
 
-### **🌍 Cross-Origin Resource Sharing**
+### **Cross-Origin Resource Sharing**
 
 - **cors** – Middleware for enabling CORS in Express.
 
-### **⚙️ Environment Configuration**
+### ** Environment Configuration**
 
 - **dotenv** – Loads environment variables from a `.env` file.
 
-### **🛡️ Code Quality & Formatting**
+### ** Code Quality & Formatting**
 
 - **eslint** – Linter for identifying problematic patterns in code.  
 - **prettier** – Code formatter for consistent styling.
 
-### **📦 Build & Development Utilities**
+### ** Build & Development Utilities**
 
 - **chalk** – Terminal string styling for improved CLI output.  
 - **progress-estimator** – Estimate and display task progress.  
@@ -91,19 +58,13 @@ Bangu Blogs Server is a robust backend application built for managing blogs with
 
 ## 🛠️ Run the Server Locally
 
-### Prerequisites
-
-- `Node.js` (Preferred `v22+`)
-- `pnpm` package manager
-- If you prefer `npm` or `yarn` over `pnpm`, delete `pnpm-lock.yaml` file and follow the steps below.
-
 ### Installation
 
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/nazmul-nhb/bangu-blogs-server.git
-   cd bangu-blogs-server
+   git clone https://github.com/shopna-akter/blog-server-assignment
+   cd blog-server-assignment
    ```
 
 2. Install dependencies:
@@ -129,7 +90,7 @@ Bangu Blogs Server is a robust backend application built for managing blogs with
 
    ```env
     NODE_ENV=development
-    PORT=4242 or any port number
+    PORT=any port number
     SALT_ROUNDS=<number>
     MONGO_URI=your_mongo_db_uri
     JWT_ACCESS_SECRET=secret_string_for_access_token
@@ -138,7 +99,7 @@ Bangu Blogs Server is a robust backend application built for managing blogs with
     JWT_REFRESH_EXPIRES_IN=expiry_time (1h, 1d etc.)
    ```
 
-4. Start the development server:
+4. Start the server:
 
    ```bash
     pnpm dev
@@ -159,7 +120,7 @@ Bangu Blogs Server is a robust backend application built for managing blogs with
 5. Access the API at:
 
    ```bash
-   http://localhost:4242
+   http://localhost:yourport
    ```
 
 ---
@@ -437,17 +398,6 @@ All error responses follow a consistent structure:
   "stack": "Error stack trace if available"
 }
 ```
-
----
-
-## 📊 **Custom Progress Indicators**  
-
-Implemented **custom progress indicators** using `progress-estimator`, `globby` and `chalk` for key development tasks to improve visibility and clarity during long-running processes:  
-
-- **Build:** `pnpm build` – Displays progress while building the project.  
-- **Lint:** `pnpm lint` – Provides real-time progress feedback during linting.  
-- **Fix:** `pnpm fix` – Tracks progress while auto-fixing linting issues.
-- **Deploy:** `pnpm run deploy` – Builds the project and deploys it to **Vercel** with production settings, displaying progress for both stages.  
 
 ---
 
