@@ -1,4 +1,4 @@
-# Bangu Blogs Server
+# Blogs Server
 
 - [Live Server Link]()
 
@@ -46,17 +46,7 @@
 - **eslint** – Linter for identifying problematic patterns in code.  
 - **prettier** – Code formatter for consistent styling.
 
-### ** Build & Development Utilities**
-
-- **chalk** – Terminal string styling for improved CLI output.  
-- **progress-estimator** – Estimate and display task progress.  
-- **execa** – Better `child_process` management.  
-- **rimraf** – Cross-platform tool for recursive file deletion.  
-- **globby** – Advanced globbing library for file matching (in `build.mjs`).  
-- **nodemon** – Utility for automatically restarting the server during development.  
-- **ts-node** – Run TypeScript in development directly without manual compilation.
-
-## 🛠️ Run the Server Locally
+## Run the Server Locally
 
 ### Installation
 

@@ -1,14 +1,7 @@
 import type { Response } from 'express';
 import type { TCollection, TMethod, TResponseDetails } from '../types';
 
-/**
- * @function
- * Sends a formatted JSON response.
- * @param res Response from Express.js from the specific controller.
- * @param collection The name of the collection (e.g., 'Student').
- * @param method The method type (e.g., 'POST', 'GET', 'PUT', 'PATCH', 'DELETE' etc.).
- * @param data Optional data to include in the response.
- */
+
 const sendResponse = <T>(
 	res: Response,
 	collection: TCollection,
@@ -28,14 +21,7 @@ const sendResponse = <T>(
 	res.status(statusCode).json(response);
 };
 
-/**
- * @function
- * Generates message and status code based on the collection and method type.
- * @param collection The name of the collection (e.g., 'Student').
- * @param method The method type (e.g., 'POST', 'GET', 'PUT', 'PATCH', 'DELETE' etc.).
- * @param data The data being operated upon.
- * @returns An object containing the formatted message and HTTP status code.
- */
+
 const generateResponse = <T>(
 	collection: TCollection,
 	method: TMethod,

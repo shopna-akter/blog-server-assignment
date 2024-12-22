@@ -1,7 +1,7 @@
 import { Blog } from '../blog/blog.model';
 import { User } from '../user/user.model';
 import type { Types } from 'mongoose';
-import type { BanguPayload } from '../../types/interfaces';
+import type { TokenPayload } from '../../types/interfaces';
 import { ErrorWithStatus } from '../../classes/ErrorWithStatus';
 import { STATUS_CODES } from '../../constants';
 
@@ -11,7 +11,7 @@ import { STATUS_CODES } from '../../constants';
  * @param admin Current logged in user (admin) from decoded token.
  * @returns A message indicating the result of the operation.
  */
-const blockUserInDB = async (id: Types.ObjectId, admin?: BanguPayload) => {
+const blockUserInDB = async (id: Types.ObjectId, admin?: TokenPayload) => {
 	if (admin?.role !== 'admin') {
 		throw new ErrorWithStatus(
 			'Authorization Error',
@@ -60,7 +60,7 @@ const blockUserInDB = async (id: Types.ObjectId, admin?: BanguPayload) => {
  * @param id Blog ID to delete.
  * @param admin Current logged in user (admin) from decoded token.
  */
-const deleteBlogFromDB = async (id: Types.ObjectId, admin?: BanguPayload) => {
+const deleteBlogFromDB = async (id: Types.ObjectId, admin?: TokenPayload) => {
 	const currentUser = await User.validateUser(admin?.email);
 
 	if (currentUser.role !== 'admin') {

@@ -4,7 +4,7 @@ import { User } from '../user/user.model';
 import { Blog } from './blog.model';
 import type { Types } from 'mongoose';
 import type { IBlog, IBlogQuery } from './blog.types';
-import type { BanguPayload } from '../../types/interfaces';
+import type { TokenPayload } from '../../types/interfaces';
 import { QueryBuilder } from '../../classes/QueryBuilder';
 
 
@@ -32,7 +32,7 @@ const saveBlogInDB = async (payload: IBlog, email?: string) => {
 const updateBlogInDB = async (
 	id: Types.ObjectId,
 	payload: Partial<IBlog>,
-	user?: BanguPayload,
+	user?: TokenPayload,
 ) => {
 	const existingBlog = await Blog.findBlogById(id);
 
@@ -54,7 +54,7 @@ const updateBlogInDB = async (
 };
 
 
-const deleteBlogFromDB = async (id: Types.ObjectId, user?: BanguPayload) => {
+const deleteBlogFromDB = async (id: Types.ObjectId, user?: TokenPayload) => {
 	const existingBlog = await Blog.findBlogById(id);
 
 	if (existingBlog.author.email !== user?.email) {
