@@ -7,7 +7,7 @@ import { verifyToken } from '../utilities/authUtilities';
 import { STATUS_CODES } from '../constants';
 
 
-const authorizeUser = (...requiredRoles: TUserRole[]) => {
+const auth = (...requiredRoles: TUserRole[]) => {
 	return catchAsync(async (req, _res, next) => {
 		const token = req.headers.authorization?.split(' ')[1];
 
@@ -30,4 +30,4 @@ const authorizeUser = (...requiredRoles: TUserRole[]) => {
 	});
 };
 
-export default authorizeUser;
+export default auth;
