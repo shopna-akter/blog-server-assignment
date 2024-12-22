@@ -5,9 +5,6 @@ import type {
 	IErrorSource,
 } from '../types/interfaces';
 
-/**
- * Processes Mongoose Validation Errors and returns a structured response.
- */
 export const handleValidationError = (
 	error: MongoError.ValidationError,
 	stack?: string,
@@ -27,9 +24,7 @@ export const handleValidationError = (
 	};
 };
 
-/**
- * Processes Mongoose Cast Errors and returns a structured response.
- */
+
 export const handleCastError = (
 	error: MongoError.CastError,
 	stack?: string,

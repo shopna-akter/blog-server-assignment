@@ -18,9 +18,7 @@ export const handleErrorWithStatus = (
 	};
 };
 
-/**
- * Processes general Error objects.
- */
+
 export const handleGenericError = (
 	error: Error,
 	stack?: string,
@@ -38,9 +36,6 @@ export const handleGenericError = (
 	};
 };
 
-/**
- * Processes Express Body Parser Errors.
- */
 export const handleParserError = (
 	_error: IParserError,
 	stack?: string,
