@@ -5,7 +5,6 @@ import { ErrorWithStatus } from '../../classes/ErrorWithStatus';
 import {
 	comparePassword,
 	generateToken,
-	verifyToken,
 } from '../../utilities/authUtilities';
 import type { TokenPayload } from '../../types/interfaces';
 import type { ILoginCredentials, ITokens, IUser } from '../user/user.types';
@@ -57,21 +56,4 @@ const loginUser = async (payload: ILoginCredentials): Promise<ITokens> => {
 	return { accessToken, refreshToken };
 };
 
-const refreshToken = async (token: string): Promise<{ token: string }> => {
-	const decodedToken = verifyToken(configs.refreshSecret, token);
-	const user = await User.validateUser(decodedToken.email);
-	const jwtPayload = {
-		email: user.email,
-		role: user.role,
-	};
-
-	const accessToken = generateToken(
-		jwtPayload,
-		configs.accessSecret,
-		configs.accessExpireTime,
-	);
-
-	return { token: accessToken };
-};
-
-export const authServices = { registerUserInDB, loginUser, refreshToken };
+export const authServices = { registerUserInDB, loginUser };
