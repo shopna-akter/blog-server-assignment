@@ -7,12 +7,7 @@ import type { IBlog, IBlogQuery } from './blog.types';
 import type { BanguPayload } from '../../types/interfaces';
 import { QueryBuilder } from '../../classes/QueryBuilder';
 
-/**
- * Save a blog in MongoDB.
- * @param payload Blog data.
- * @param email Current user's email.
- * @returns Created blog.
- */
+
 const saveBlogInDB = async (payload: IBlog, email?: string) => {
 	const user = await User.validateUser(email);
 
@@ -34,13 +29,6 @@ const saveBlogInDB = async (payload: IBlog, email?: string) => {
 	return blog;
 };
 
-/**
- * Update a blog.
- * @param id MongoDB `ObjectId` for the blog.
- * @param payload Field(s) to update.
- * @param user Current logged in user.
- * @returns Updated blog.
- */
 const updateBlogInDB = async (
 	id: Types.ObjectId,
 	payload: Partial<IBlog>,
@@ -65,11 +53,7 @@ const updateBlogInDB = async (
 	return updatedBlog;
 };
 
-/**
- * Delete a blog from MongoDB for `user`.
- * @param id Blog ID to delete.
- * @param user Current logged in user.
- */
+
 const deleteBlogFromDB = async (id: Types.ObjectId, user?: BanguPayload) => {
 	const existingBlog = await Blog.findBlogById(id);
 
@@ -94,11 +78,6 @@ const deleteBlogFromDB = async (id: Types.ObjectId, user?: BanguPayload) => {
 	}
 };
 
-/**
- * Get all blogs from MongoDB
- * @param query Query object from request.
- * @returns All blogs.
- */
 const getAllBlogsFromDB = async (query?: IBlogQuery) => {
 	const blogQuery = new QueryBuilder(Blog.find(), query)
 		.search(['title', 'content'])
