@@ -26,10 +26,10 @@ const bootStrap = async () => {
 
 bootStrap().catch(console.dir);
 
-process.on('unhandledRejection', () => {
+process.on('unhandledRejections', () => {
 	console.error(
 		chalk.redBright(
-			`Unhandled Rejection Server Shutting Down`,
+			`Unhandleds Rejection Server Shutting Down`,
 		),
 	);
 
