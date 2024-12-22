@@ -27,7 +27,6 @@ export const connectDB = async (): Promise<void> => {
 			);
 		});
 
-		// Optional: Listen for disconnection
 		mongoose.connection.on('Disconnected', () => {
 			console.error(chalk.red('MongoDB is Disconnected!'));
 		});
