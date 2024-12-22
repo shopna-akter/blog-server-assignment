@@ -1,6 +1,5 @@
 import { z } from 'zod';
 
-/** Zod schema to validate login credentials. */
 const loginSchema = z.object({
 	email: z.string({ required_error: 'Email is required!' }).trim().email(),
 	password: z
