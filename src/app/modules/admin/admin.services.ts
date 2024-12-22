@@ -2,7 +2,7 @@ import { Blog } from '../blog/blog.model';
 import { User } from '../user/user.model';
 import type { Types } from 'mongoose';
 import type { TokenPayload } from '../../types/interfaces';
-import { ErrorWithStatus } from '../../classes/ErrorWithStatus';
+import { ErrorWithStatus } from '../../classes/withStatusError';
 import { STATUS_CODES } from '../../constants';
 
 /**

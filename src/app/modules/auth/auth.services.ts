@@ -1,7 +1,7 @@
 import configs from '../../configs';
 import { User } from '../user/user.model';
 import { STATUS_CODES } from '../../constants';
-import { ErrorWithStatus } from '../../classes/ErrorWithStatus';
+import { ErrorWithStatus } from '../../classes/withStatusError';
 import {
 	comparePassword,
 	generateToken,

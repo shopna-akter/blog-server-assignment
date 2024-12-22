@@ -1,11 +1,11 @@
-import { ErrorWithStatus } from '../../classes/ErrorWithStatus';
+import { ErrorWithStatus } from '../../classes/withStatusError';
 import { STATUS_CODES } from '../../constants';
 import { User } from '../user/user.model';
 import { Blog } from './blog.model';
 import type { Types } from 'mongoose';
 import type { IBlog, IBlogQuery } from './blog.types';
 import type { TokenPayload } from '../../types/interfaces';
-import { QueryBuilder } from '../../classes/QueryBuilder';
+import { QueryBuilder } from '../../classes/queryMaker';
 
 
 const saveBlogInDB = async (payload: IBlog, email?: string) => {

@@ -1,7 +1,7 @@
 import configs from '../configs';
 import catchAsync from '../utilities/catchAsync';
 import type { TUserRole } from '../modules/user/user.types';
-import { ErrorWithStatus } from '../classes/ErrorWithStatus';
+import { ErrorWithStatus } from '../classes/withStatusError';
 import { User } from '../modules/user/user.model';
 import { verifyToken } from '../utilities/authUtilities';
 import { STATUS_CODES } from '../constants';

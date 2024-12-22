@@ -1,7 +1,7 @@
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
 import configs from '../configs';
-import { ErrorWithStatus } from '../classes/ErrorWithStatus';
+import { ErrorWithStatus } from '../classes/withStatusError';
 import { STATUS_CODES } from '../constants';
 import type { TokenPayload } from '../types/interfaces';
 

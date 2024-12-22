@@ -1,7 +1,7 @@
 import { Schema, model } from 'mongoose';
 import type { IUserDoc, IUserModel } from './user.types';
 import { hashPassword } from '../../utilities/authUtilities';
-import { ErrorWithStatus } from '../../classes/ErrorWithStatus';
+import { ErrorWithStatus } from '../../classes/withStatusError';
 import { STATUS_CODES } from '../../constants';
 
 const userSchema = new Schema<IUserDoc>(

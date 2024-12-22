@@ -1,4 +1,4 @@
-import type { ErrorWithStatus } from '../classes/ErrorWithStatus';
+import type { ErrorWithStatus } from '../classes/withStatusError';
 import type { IErrorResponse, IParserError } from '../types/interfaces';
 
 export const handleErrorWithStatus = (

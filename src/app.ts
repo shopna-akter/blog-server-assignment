@@ -7,7 +7,7 @@ import type { Application, Request, Response } from 'express';
 import {
 	catchAllErrors,
 	handleRouteNotFound,
-} from './app/middlewares/errorHandlers';
+} from './app/middlewares/errorHandler';
 const app: Application = express();
 
 app.use(cors());

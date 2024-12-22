@@ -1,11 +1,11 @@
 import { ZodError } from 'zod';
-import { typeGuards } from './errorGuards';
-import { handleZodErrors } from './zodErrors';
+import { typeGuards } from './errorGuard';
+import { handleZodErrors } from './zodError';
 import { Error as MongoError } from 'mongoose';
-import { mongoErrors } from './mongoErrors';
-import { genericErrors } from './genericErrors';
+import { mongoErrors } from './dbError';
+import { genericErrors } from './genericError';
 import type { IErrorResponse } from '../types/interfaces';
-import { ErrorWithStatus } from '../classes/ErrorWithStatus';
+import { ErrorWithStatus } from '../classes/withStatusError';
 
 
 const processErrors = (error: unknown): IErrorResponse => {

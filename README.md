@@ -393,5 +393,5 @@ All error responses follow a consistent structure:
 
 ## 🧠 Admin Credentials
 
-- **Email:** `admin@server.com`
+- **Email:** `nihal@gmail.com`
 - **Password:** `123456`

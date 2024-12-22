@@ -1,7 +1,7 @@
 import { Schema, model } from 'mongoose';
 import type { Query, Types } from 'mongoose';
 import type { IBlogDoc, IBlogModel } from './blog.types';
-import { ErrorWithStatus } from '../../classes/ErrorWithStatus';
+import { ErrorWithStatus } from '../../classes/withStatusError';
 import { STATUS_CODES } from '../../constants';
 
 const blogSchema = new Schema<IBlogDoc>(

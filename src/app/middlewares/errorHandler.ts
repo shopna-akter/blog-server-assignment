@@ -1,6 +1,6 @@
 import { STATUS_CODES } from '../constants';
-import processErrors from '../errors/processErrors';
-import { ErrorWithStatus } from '../classes/ErrorWithStatus';
+import processErrors from '../errors/processError';
+import { ErrorWithStatus } from '../classes/withStatusError';
 import type { RequestHandler, ErrorRequestHandler } from 'express';
 
 export const handleRouteNotFound: RequestHandler = (req, _res, next) => {
